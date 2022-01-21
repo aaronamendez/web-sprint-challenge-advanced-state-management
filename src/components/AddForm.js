@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 
 import { addSmurf } from '../actions';
 
 const AddForm = ({ error, addSmurf }) => {
 	const [state, setState] = useState({
-		id: Date.now(),
+		id: uuid(),
 		name: '',
 		position: '',
 		nickname: '',

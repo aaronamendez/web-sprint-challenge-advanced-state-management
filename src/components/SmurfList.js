@@ -9,8 +9,8 @@ const SmurfList = ({ smurfs, isLoading }) => {
 
 	return (
 		<div className="listContainer">
-			{smurfs.map((smurf) => {
-				return <Smurf key={smurf.id} smurf={smurf} />;
+			{smurfs.map((smurf, idx) => {
+				return <Smurf key={idx} smurf={smurf} />;
 			})}
 		</div>
 	);
