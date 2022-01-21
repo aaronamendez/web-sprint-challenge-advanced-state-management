@@ -2,7 +2,8 @@ import {
 	FETCH_START,
 	FETCH_FAIL,
 	FETCH_SUCCESS,
-	ADD_SMURF_START,
+	ADD_SMURF_FAIL,
+	ADD_SMURF_SUCCESS,
 } from '../actions';
 
 export const initialState = {
@@ -48,11 +49,19 @@ const reducer = (state = initialState, action) => {
 			};
 		}
 
-		// Finish this later
-		case ADD_SMURF_START: {
+		// ADD NEW SMURF LOGIC BELOW
+
+		case ADD_SMURF_FAIL: {
 			return {
 				...state,
-				isLoading: true,
+				error: 'Name, Position and Nickname fields are required!',
+			};
+		}
+
+		case ADD_SMURF_SUCCESS: {
+			return {
+				...state,
+				smurfs: [...state.smurfs, action.payload],
 				error: '',
 			};
 		}
