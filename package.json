@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "msw": "^0.21.3"
+    "msw": "^0.21.3",
+    "redux-devtools-extension": "^2.13.9"
   }
 }
