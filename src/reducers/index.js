@@ -1,4 +1,9 @@
-import { FETCH_START, FETCH_FAIL, FETCH_SUCCESS } from '../actions';
+import {
+	FETCH_START,
+	FETCH_FAIL,
+	FETCH_SUCCESS,
+	ADD_SMURF_START,
+} from '../actions';
 
 export const initialState = {
 	smurfs: [
@@ -11,7 +16,7 @@ export const initialState = {
 				'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.',
 		},
 	],
-	isFetching: false,
+	isLoading: false,
 	error: '',
 };
 
@@ -21,7 +26,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				smurfs: [],
-				isFetching: true,
+				isLoading: true,
 				error: '',
 			};
 
@@ -29,7 +34,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				smurfs: [],
-				isFetching: false,
+				isLoading: false,
 				error: action.payload,
 			};
 		}
@@ -38,7 +43,16 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				smurfs: action.payload,
-				isFetching: false,
+				isLoading: false,
+				error: '',
+			};
+		}
+
+		// Finish this later
+		case ADD_SMURF_START: {
+			return {
+				...state,
+				isLoading: true,
 				error: '',
 			};
 		}

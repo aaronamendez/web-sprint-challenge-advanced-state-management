@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_START = 'FETCH_START';
 export const FETCH_FAIL = 'FETCH_FAIL';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const ADD_SMURF_START = 'ADD_SMURF_START';
 
 const fetchStart = () => {
 	return { type: FETCH_START };
@@ -23,6 +24,11 @@ export const fetchSmurfs = () => (dispatch) => {
 			dispatch(fetchSuccess(res.data));
 		})
 		.catch((err) => dispatch(fetchFail(err.message)));
+};
+
+// Finish this later
+const addSmurfStart = () => (dispatch) => {
+	console.log('ADD SMURF START');
 };
 
 //Task List:
