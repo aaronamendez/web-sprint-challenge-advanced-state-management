@@ -19,7 +19,7 @@ const SmurfList = ({ smurfs, isLoading }) => {
 const mapStateToProps = (state) => {
 	return {
 		smurfs: state.smurfs,
-		isLoading: state.isFetching,
+		isLoading: state.isLoading,
 	};
 };
 
